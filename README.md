@@ -8,176 +8,214 @@
 
 ## Deskripsi 🛠️
 
-Freepass Challenge POROS 2026 menantang peserta untuk membangun **pipeline CI/CD end-to-end** hingga tahap **deployment aplikasi yang benar-benar berjalan**, dengan memanfaatkan **containerization dan orchestration**.
+Freepass Challenge POROS 2026 menantang peserta untuk membangun **pipeline CI/CD end-to-end** hingga tahap **deployment aplikasi yang benar-benar berjalan**, menggunakan prinsip containerization dan orchestration.
 
-Challenge ini merepresentasikan praktik **DevOps di dunia nyata**, mulai dari pengelolaan source code, otomatisasi proses build dan testing, hingga menjalankan aplikasi multi-service dalam satu sistem yang terorkestrasi.
+Challenge ini merepresentasikan praktik DevOps di dunia nyata, mulai dari:
 
-Fokus utama challenge ini meliputi:
-
-- Otomatisasi proses CI/CD secara menyeluruh  
-- Penerapan container pada setiap service  
-- Penggunaan orkestrasi untuk menjalankan dan mengelola beberapa service sekaligus  
-- Integrasi antar service hingga aplikasi dapat diakses dan digunakan dengan baik  
+- Manajemen source code
+- Automasi build dan testing
+- Publishing container image
+- Deployment terorkestrasi
+- Aplikasi berjalan dan dapat diakses
 
 ⚠️ **Setiap peserta wajib menggunakan project yang berbeda.**
 
 ---
 
-## Kriteria Umum 📌
+# Kriteria Umum 📌
 
-### 1️⃣ Aplikasi Multi-Service (Wajib)
+## 1️⃣ Aplikasi Multi-Service (Wajib)
 
-Project yang dibuat **wajib terdiri dari minimal 3 service**, contohnya:
+Project wajib terdiri dari **minimal 3 service**, contohnya:
 
-- Frontend  
-- Backend  
-- Database  
+- Frontend
+- Backend
+- Database
 
-Service tambahan seperti authentication service, worker, cache, atau message broker diperbolehkan.
+Service tambahan diperbolehkan:
+- Authentication Service
+- Cache (Redis)
+- Message Broker
+- Worker
+- API Gateway
+- dll.
 
-Ketentuan:
+### Ketentuan:
 
-- Setiap service harus berjalan secara terpisah  
-- Seluruh service wajib dikemas dalam container  
-- Antar service harus saling terhubung dan dapat berkomunikasi dengan baik  
+- Setiap service berjalan secara terpisah
+- Seluruh service dikemas dalam container
+- Antar service saling terhubung melalui network internal
+- Aplikasi dapat diakses melalui browser atau endpoint API
 
-Teknologi yang digunakan **bebas**, misalnya:
-
-- Frontend: React, Vue, Svelte, dan lainnya  
-- Backend: Node.js, Spring Boot, Flask, Laravel, dan lainnya  
-- Database: MySQL, PostgreSQL, MongoDB, dan lainnya  
-
-Aplikasi boleh dikembangkan sendiri atau hasil adaptasi, **namun tidak boleh sama antar peserta**.
-
----
-
-### 2️⃣ Pipeline CI/CD 🔄
-
-Peserta wajib membangun pipeline CI/CD yang berjalan otomatis setiap kali terjadi perubahan kode pada repository.
-
-Pipeline minimal harus mencakup:
-
-- Proses **build** container image untuk setiap service  
-- Proses **test** (minimal pada sisi backend)  
-- Proses **deploy** hingga aplikasi benar-benar berjalan  
-
-Pipeline **tidak boleh berhenti pada tahap build saja**, tetapi harus menghasilkan aplikasi yang aktif dan dapat diakses melalui sistem orkestrasi.
-
-Tools CI/CD yang digunakan **bebas**, seperti:
-
-- Jenkins  
-- GitHub Actions  
-- GitLab CI  
-- atau tools sejenis lainnya  
+Teknologi bebas digunakan.
 
 ---
 
-### 3️⃣ Containerization & Orchestration 🐳☸️
+## 2️⃣ Pipeline CI/CD 🔄
 
-Seluruh service wajib dijalankan dalam container dan dikelola menggunakan sistem orkestrasi container.
+Pipeline harus berjalan otomatis ketika terjadi perubahan kode (push / pull request) pada repository.
 
-Ketentuan:
+### Pipeline minimal wajib mencakup:
 
-- Penggunaan orkestrasi **wajib**  
-- Kubernetes **tidak diwajibkan**  
-- Peserta bebas memilih tools orkestrasi, seperti:
-  - Docker Compose  
-  - Kubernetes  
-  - atau orkestrator lain yang relevan  
+1. **Build Stage**
+   - Build container image untuk setiap service
+   - Menggunakan Dockerfile yang terpisah
+   - Tidak diperbolehkan manual build di luar pipeline
 
-Sistem yang dibangun harus menunjukkan bahwa:
+2. **Test Stage**
+   - Minimal terdapat automated test pada backend
+   - Test dijalankan di dalam pipeline
+   - Pipeline harus gagal jika test gagal
 
-- Semua service dapat berjalan secara bersamaan  
-- Komunikasi antar service berjalan dengan baik  
-- Aplikasi dapat diakses dan digunakan secara normal  
+3. **Push Image Stage**
+   - Image wajib di-push ke container registry
+   - Registry bebas (Docker Hub, GHCR, GitLab Registry, dll.)
 
----
-
-## Kriteria Penilaian 📊
-
-### 🔹 Pipeline CI/CD
-
-Penilaian pipeline mencakup:
-
-- Kemampuan berjalan otomatis saat terjadi perubahan kode  
-- Alur build, test, dan deploy yang tersusun dengan jelas  
-- Log pipeline yang informatif dan mudah dipahami  
+4. **Deploy Stage**
+   - Deployment dilakukan secara otomatis dari pipeline
+   - Deployment mengambil image dari registry (bukan build ulang di server)
+   - Setelah deploy, aplikasi harus benar-benar berjalan
 
 ---
 
-### 🔹 Containerization & Orchestration
+## 3️⃣ Target Deployment 🌐
 
-Penilaian implementasi container dan orkestrasi meliputi:
+Deployment boleh dilakukan pada:
 
-- Seluruh service berhasil dijalankan dalam container  
-- Minimal tiga service terhubung dalam satu sistem orkestrasi  
-- Aplikasi berjalan dengan baik dan dapat diakses  
+- Local VM
+- Self-hosted runner
+- VPS
+- Cloud environment
+
+Namun wajib memenuhi:
+
+- Aplikasi dapat diakses (browser atau API endpoint)
+- Semua service berjalan bersamaan
+- Terdapat bukti screenshot/log bahwa sistem berhasil berjalan
 
 ---
 
-### 🔹 Dokumentasi 📄
+## 4️⃣ Containerization & Orchestration 🐳☸️
 
-Dokumentasi merupakan bagian penting dari challenge ini.
+Seluruh service wajib dikelola menggunakan sistem orkestrasi.
+
+### Ketentuan:
+
+- Orkestrasi wajib digunakan
+- Kubernetes tidak wajib
+- Boleh menggunakan:
+  - Docker Compose
+  - Kubernetes
+  - Orchestrator lain yang relevan
+
+### Minimal Requirement Orkestrasi
+
+Jika menggunakan Docker Compose, wajib terdapat:
+
+- Custom network
+- Volume (untuk database atau persistence)
+- Environment variables
+- Depends_on / service dependency
+- Konfigurasi yang jelas antar service
+
+Jika menggunakan Kubernetes, minimal terdapat:
+
+- Deployment
+- Service
+- Konfigurasi environment
+- Pod berjalan dengan benar
+
+---
+
+# Kriteria Penilaian 📊
+
+## 1️⃣ Pipeline CI/CD (35%)
+
+- Pipeline berjalan otomatis
+- Terdapat stage build, test, push, deploy
+- Menggunakan registry
+- Log pipeline jelas dan informatif
+- Deployment benar-benar terjadi dari pipeline
+
+---
+
+## 2️⃣ Containerization & Orchestration (30%)
+
+- Seluruh service berjalan dalam container
+- Minimal 3 service saling terhubung
+- Konfigurasi orkestrasi benar
+- Aplikasi dapat diakses dan digunakan
+
+---
+
+## 3️⃣ Dokumentasi (20%)
 
 Peserta wajib menyediakan:
 
-#### 📌 README.md
+### README.md
 
 Berisi:
+- Penjelasan arsitektur aplikasi
+- Diagram arsitektur (opsional tapi disarankan)
+- Struktur repository
+- Penjelasan alur CI/CD
+- Cara menjalankan sistem secara manual (jika diperlukan)
 
-- Penjelasan arsitektur aplikasi  
-- Struktur repository  
-- Cara menjalankan pipeline dan proses deployment  
+### Laporan PDF
 
-#### 📌 Laporan PDF
-
-Berisi penjelasan rinci mengenai:
-
-- Alur CI/CD pipeline  
-- Proses containerization  
-- Cara kerja orkestrasi dan deployment  
-- Bukti keberhasilan setiap tahapan, mulai dari pipeline hingga aplikasi berhasil berjalan  
-
----
-
-### 🔹 Inovasi Tambahan (Opsional) 🌟
-
-Peserta dapat menambahkan fitur tambahan sebagai nilai plus, seperti:
-
-- Monitoring pipeline atau aplikasi  
-- Centralized logging  
-- Load balancing  
-- Deployment ke cloud atau environment staging  
-- Optimasi ukuran image container  
+Berisi:
+- Penjelasan detail pipeline
+- Screenshot setiap stage pipeline
+- Bukti image berhasil di-push ke registry
+- Bukti deployment berhasil
+- Bukti aplikasi berjalan (browser/API response)
 
 ---
 
-## Pengumpulan 📤
+## 4️⃣ Inovasi Tambahan (15%) 🌟
 
-- Source code diunggah ke **GitHub**  
-- Repository **wajib dalam keadaan public**  
-- Sertakan link repository pada laporan PDF  
+Nilai tambahan diberikan jika peserta mengimplementasikan:
+
+- Monitoring (Prometheus/Grafana)
+- Centralized logging
+- Reverse proxy (Nginx/Traefik)
+- Load balancing
+- Health check
+- Deployment ke cloud
+- Optimasi ukuran image
+- Infrastructure as Code (Terraform/Ansible)
 
 ---
 
-## Deadline ⏳
+# Pengumpulan 📤
 
-- **Start**: 11 Februari 2026, 12.30  
-- **End**: 18 Februari 2026, 17.00  
+- Source code diunggah ke GitHub
+- Repository wajib public
+- Sertakan link repository pada laporan PDF
+- Deadline submission tidak menerima perpanjangan
 
 ---
 
-## Contact Person 📞
+# Deadline ⏳
+
+- Start: 11 Februari 2026, 12.30
+- End: 18 Februari 2026, 17.00
+
+---
+
+# Contact Person 📞
 
 | Nama | Contact |
 |------|----------|
-| 📱 **Aldura** | [Whatsapp](https://wa.me/+6281333093230) |
-| 📱 **Hasbi** | [Whatsapp](https://wa.me/+6287868287838) |
+| 📱 Aldura | https://wa.me/+6281333093230 |
+| 📱 Hasbi | https://wa.me/+6287868287838 |
 
 ---
 
-## Catatan Penting ⚠️
+# Catatan Penting ⚠️
 
-- Minimal **3 service (wajib)**  
-- Orkestrasi **wajib digunakan**  
-- Project **harus berbeda untuk setiap peserta**  
+- Minimal 3 service (wajib)
+- Orkestrasi wajib
+- Registry wajib
+- Test wajib berjalan di pipeline
+- Project harus berbeda untuk setiap peserta
