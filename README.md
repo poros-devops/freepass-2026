@@ -1,5 +1,6 @@
-![devops_loop](https://github.com/user-attachments/assets/2941c294-37ef-411d-a945-8d8dd44efe5c)
 # Freepass Challenge POROS 2026 🚀⚙️
+
+![devops_loop](https://github.com/user-attachments/assets/2941c294-37ef-411d-a945-8d8dd44efe5c)
 
 ## Containerized CI/CD Pipeline with Orchestration for Multi-Service Application
 
@@ -42,13 +43,14 @@ Teknologi yang digunakan **bebas**, contoh:
 
 Aplikasi boleh hasil pengembangan sendiri atau adaptasi, **namun tidak boleh sama antar peserta**.
 
----## Catatan Penting ⚠️
+---
+
+## Catatan Penting ⚠️
 - Minimal **3 service (wajib)**
 - Orkestrasi **wajib**
-- Kubernetes **tidak wajib**
-- Cloud deployment **tidak wajib**
-- DevSecOps **tidak menjadi fokus penilaian**
 - Project **harus berbeda untuk setiap peserta**
+
+---
 
 ### Pipeline CI/CD 🔄
 Peserta harus membangun pipeline CI/CD yang berjalan otomatis ketika terjadi perubahan kode pada repository.
@@ -72,13 +74,7 @@ Seluruh service wajib dijalankan dalam container dan dikelola menggunakan **orke
 
 Ketentuan:
 - Orkestrasi **wajib digunakan**
-- Kub## Catatan Penting ⚠️
-- Minimal **3 service (wajib)**
-- Orkestrasi **wajib**
 - Kubernetes **tidak wajib**
-- Cloud deployment **tidak wajib**
-- DevSecOps **tidak menjadi fokus penilaian**
-- Project **harus berbeda untuk setiap peserta**ernetes **tidak wajib**
 - Peserta bebas memilih tools orkestrasi, seperti:
   - Docker Compose  
   - Kubernetes  
@@ -113,7 +109,7 @@ Implementasi container dan orkestrasi dinilai dari:
 Dokumentasi merupakan bagian penting dari challenge ini.
 
 Peserta wajib menyediakan:
-- **README.md (Markdown)** yang menjelaskan:
+- **README.md** yang menjelaskan:
   - Arsitektur aplikasi
   - Struktur repository
   - Cara menjalankan pipeline dan deployment
@@ -121,6 +117,7 @@ Peserta wajib menyediakan:
   - Alur CI/CD pipeline
   - Proses containerization
   - Cara kerja orkestrasi dan deployment
+  - Bukti keberhasilan setiap proses dari pipeline CI/CD sampai deployment
 
 ---
 
@@ -137,7 +134,7 @@ Peserta dapat menambahkan inovasi sebagai nilai tambah, seperti:
 ## Pengumpulan 📤
 - Source code diunggah ke **GitHub**
 - Repository **wajib public**
-- Sertakan link repository dan laporan saat pengumpulan
+- Sertakan link repository pada laporan
 
 ---
 
