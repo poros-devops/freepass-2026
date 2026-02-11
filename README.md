@@ -7,145 +7,177 @@
 ---
 
 ## Deskripsi 🛠️
-Freepass Challenge POROS 2026 menantang peserta untuk membangun **pipeline CI/CD end-to-end** hingga tahap **deployment aplikasi yang berjalan** menggunakan **container dan orkestrasi**.
 
-Challenge ini merepresentasikan alur kerja **DevOps di dunia nyata**, mulai dari pengelolaan source code, automasi build dan test, hingga menjalankan aplikasi multi-service dalam satu sistem terorkestrasi.
+Freepass Challenge POROS 2026 menantang peserta untuk membangun **pipeline CI/CD end-to-end** hingga tahap **deployment aplikasi yang benar-benar berjalan**, dengan memanfaatkan **containerization dan orchestration**.
 
-Fokus utama challenge ini adalah:
-- Automasi proses CI/CD dari awal hingga akhir  
+Challenge ini merepresentasikan praktik **DevOps di dunia nyata**, mulai dari pengelolaan source code, otomatisasi proses build dan testing, hingga menjalankan aplikasi multi-service dalam satu sistem yang terorkestrasi.
+
+Fokus utama challenge ini meliputi:
+
+- Otomatisasi proses CI/CD secara menyeluruh  
 - Penerapan container pada setiap service  
-- Orkestrasi untuk menjalankan dan mengelola banyak service sekaligus  
-- Integrasi antar service hingga aplikasi dapat diakses dan digunakan  
+- Penggunaan orkestrasi untuk menjalankan dan mengelola beberapa service sekaligus  
+- Integrasi antar service hingga aplikasi dapat diakses dan digunakan dengan baik  
 
-⚠️ **Setiap peserta freepass wajib menggunakan project yang berbeda.**
+⚠️ **Setiap peserta wajib menggunakan project yang berbeda.**
 
 ---
 
 ## Kriteria Umum 📌
 
-### Aplikasi Multi-Service (Wajib)
-Project yang dibuat **wajib terdiri dari minimal 3 service**, misalnya:
+### 1️⃣ Aplikasi Multi-Service (Wajib)
+
+Project yang dibuat **wajib terdiri dari minimal 3 service**, contohnya:
+
 - Frontend  
 - Backend  
 - Database  
 
 Service tambahan seperti authentication service, worker, cache, atau message broker diperbolehkan.
 
-Ketentuan umum:
-- Setiap service berjalan secara terpisah
-- Seluruh service dikemas dalam container
-- Antar service saling terhubung dan berkomunikasi
+Ketentuan:
 
-Teknologi yang digunakan **bebas**, contoh:
-- Frontend: React, Vue, Svelte, dsb  
-- Backend: Node.js, Spring Boot, Flask, Laravel, dsb  
-- Database: MySQL, PostgreSQL, MongoDB, dsb  
+- Setiap service harus berjalan secara terpisah  
+- Seluruh service wajib dikemas dalam container  
+- Antar service harus saling terhubung dan dapat berkomunikasi dengan baik  
 
-Aplikasi boleh hasil pengembangan sendiri atau adaptasi, **namun tidak boleh sama antar peserta**.
+Teknologi yang digunakan **bebas**, misalnya:
+
+- Frontend: React, Vue, Svelte, dan lainnya  
+- Backend: Node.js, Spring Boot, Flask, Laravel, dan lainnya  
+- Database: MySQL, PostgreSQL, MongoDB, dan lainnya  
+
+Aplikasi boleh dikembangkan sendiri atau hasil adaptasi, **namun tidak boleh sama antar peserta**.
 
 ---
 
-### Pipeline CI/CD 🔄
-Peserta harus membangun pipeline CI/CD yang berjalan otomatis ketika terjadi perubahan kode pada repository.
+### 2️⃣ Pipeline CI/CD 🔄
 
-Pipeline minimal mencakup:
-- Proses **build** container image untuk setiap service
-- Proses **test**, minimal pada sisi backend
-- Proses **deploy** hingga aplikasi benar-benar berjalan
+Peserta wajib membangun pipeline CI/CD yang berjalan otomatis setiap kali terjadi perubahan kode pada repository.
 
-Pipeline **tidak berhenti di build**, tetapi harus menghasilkan aplikasi yang aktif dan dapat diakses melalui sistem orkestrasi.
+Pipeline minimal harus mencakup:
 
-Tools CI/CD **bebas digunakan**, contoh:
+- Proses **build** container image untuk setiap service  
+- Proses **test** (minimal pada sisi backend)  
+- Proses **deploy** hingga aplikasi benar-benar berjalan  
+
+Pipeline **tidak boleh berhenti pada tahap build saja**, tetapi harus menghasilkan aplikasi yang aktif dan dapat diakses melalui sistem orkestrasi.
+
+Tools CI/CD yang digunakan **bebas**, seperti:
+
 - Jenkins  
 - GitHub Actions  
 - GitLab CI  
+- atau tools sejenis lainnya  
 
 ---
 
-### Containerization & Orchestration 🐳☸️
-Seluruh service wajib dijalankan dalam container dan dikelola menggunakan **orkestrasi container**.
+### 3️⃣ Containerization & Orchestration 🐳☸️
+
+Seluruh service wajib dijalankan dalam container dan dikelola menggunakan sistem orkestrasi container.
 
 Ketentuan:
-- Orkestrasi **wajib digunakan**
-- Kubernetes **tidak wajib**
+
+- Penggunaan orkestrasi **wajib**  
+- Kubernetes **tidak diwajibkan**  
 - Peserta bebas memilih tools orkestrasi, seperti:
   - Docker Compose  
   - Kubernetes  
-  - Orkestrator lain yang relevan  
+  - atau orkestrator lain yang relevan  
 
 Sistem yang dibangun harus menunjukkan bahwa:
-- Semua service berjalan bersamaan
-- Komunikasi antar service berjalan dengan baik
-- Aplikasi dapat diakses dan digunakan
+
+- Semua service dapat berjalan secara bersamaan  
+- Komunikasi antar service berjalan dengan baik  
+- Aplikasi dapat diakses dan digunakan secara normal  
 
 ---
 
 ## Kriteria Penilaian 📊
 
-### Pipeline CI/CD
-Pipeline dinilai berdasarkan:
-- Kemampuan berjalan otomatis saat ada perubahan kode
-- Alur build, test, dan deploy yang tersusun dengan jelas
-- Log pipeline yang informatif dan mudah dipahami
+### 🔹 Pipeline CI/CD
+
+Penilaian pipeline mencakup:
+
+- Kemampuan berjalan otomatis saat terjadi perubahan kode  
+- Alur build, test, dan deploy yang tersusun dengan jelas  
+- Log pipeline yang informatif dan mudah dipahami  
 
 ---
 
-### Containerization & Orchestration
-Implementasi container dan orkestrasi dinilai dari:
-- Seluruh service berhasil dijalankan dalam container
-- Minimal tiga service terhubung dalam satu sistem orkestrasi
-- Aplikasi berjalan dan dapat diakses
+### 🔹 Containerization & Orchestration
+
+Penilaian implementasi container dan orkestrasi meliputi:
+
+- Seluruh service berhasil dijalankan dalam container  
+- Minimal tiga service terhubung dalam satu sistem orkestrasi  
+- Aplikasi berjalan dengan baik dan dapat diakses  
 
 ---
 
-### Dokumentasi 📄
+### 🔹 Dokumentasi 📄
+
 Dokumentasi merupakan bagian penting dari challenge ini.
 
 Peserta wajib menyediakan:
-- **README.md** yang menjelaskan:
-  - Arsitektur aplikasi
-  - Struktur repository
-  - Cara menjalankan pipeline dan deployment
-- **Laporan PDF** yang menjelaskan secara rinci:
-  - Alur CI/CD pipeline
-  - Proses containerization
-  - Cara kerja orkestrasi dan deployment
-  - Bukti keberhasilan setiap proses dari pipeline CI/CD sampai deployment
+
+#### 📌 README.md
+
+Berisi:
+
+- Penjelasan arsitektur aplikasi  
+- Struktur repository  
+- Cara menjalankan pipeline dan proses deployment  
+
+#### 📌 Laporan PDF
+
+Berisi penjelasan rinci mengenai:
+
+- Alur CI/CD pipeline  
+- Proses containerization  
+- Cara kerja orkestrasi dan deployment  
+- Bukti keberhasilan setiap tahapan, mulai dari pipeline hingga aplikasi berhasil berjalan  
 
 ---
 
-### Inovasi Tambahan (Opsional) 🌟
-Peserta dapat menambahkan inovasi sebagai nilai tambah, seperti:
-- Monitoring pipeline atau aplikasi
-- Centralized logging
-- Load balancing
-- Deployment ke cloud atau environment staging
-- Optimasi ukuran image container
+### 🔹 Inovasi Tambahan (Opsional) 🌟
+
+Peserta dapat menambahkan fitur tambahan sebagai nilai plus, seperti:
+
+- Monitoring pipeline atau aplikasi  
+- Centralized logging  
+- Load balancing  
+- Deployment ke cloud atau environment staging  
+- Optimasi ukuran image container  
 
 ---
 
 ## Pengumpulan 📤
-- Source code diunggah ke **GitHub**
-- Repository **wajib public**
-- Sertakan link repository pada laporan
+
+- Source code diunggah ke **GitHub**  
+- Repository **wajib dalam keadaan public**  
+- Sertakan link repository pada laporan PDF  
 
 ---
 
 ## Deadline ⏳
-- **Start**: 11 Februari 2026, 12.30 🕕
-- **End**: 18 Februari 2026 , 17.00 ⏰
+
+- **Start**: 11 Februari 2026, 12.30  
+- **End**: 18 Februari 2026, 17.00  
 
 ---
 
 ## Contact Person 📞
- | Nama  | Contact |
-|-------|----------|
-| 📱 **Aldura** | [Whatsapp](https://wa.me/+6281333093230)   |
-| 📱 **Hasbi** | [Whatsapp](https://wa.me/+6287868287838)  |
+
+| Nama | Contact |
+|------|----------|
+| 📱 **Aldura** | [Whatsapp](https://wa.me/+6281333093230) |
+| 📱 **Hasbi** | [Whatsapp](https://wa.me/+6287868287838) |
 
 ---
 
 ## Catatan Penting ⚠️
-- Minimal **3 service (wajib)**
-- Orkestrasi **wajib**
-- Project **harus berbeda untuk setiap peserta**
+
+- Minimal **3 service (wajib)**  
+- Orkestrasi **wajib digunakan**  
+- Project **harus berbeda untuk setiap peserta**  
