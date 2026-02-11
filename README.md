@@ -205,10 +205,11 @@ Nilai tambahan diberikan jika peserta mengimplementasikan:
 
 # Contact Person 📞
 
+
 | Nama | Contact |
 |------|----------|
-| 📱 Aldura | https://wa.me/+6281333093230 |
-| 📱 Hasbi | https://wa.me/+6287868287838 |
+| 📱 **Aldura** | [Whatsapp](https://wa.me/+6281333093230) |
+| 📱 **Hasbi** | [Whatsapp](https://wa.me/+6287868287838) |
 
 ---
 
