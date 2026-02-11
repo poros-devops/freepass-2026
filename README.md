@@ -45,13 +45,6 @@ Aplikasi boleh hasil pengembangan sendiri atau adaptasi, **namun tidak boleh sam
 
 ---
 
-## Catatan Penting ⚠️
-- Minimal **3 service (wajib)**
-- Orkestrasi **wajib**
-- Project **harus berbeda untuk setiap peserta**
-
----
-
 ### Pipeline CI/CD 🔄
 Peserta harus membangun pipeline CI/CD yang berjalan otomatis ketika terjadi perubahan kode pada repository.
 
@@ -149,3 +142,10 @@ Peserta dapat menambahkan inovasi sebagai nilai tambah, seperti:
 |-------|----------|
 | 📱 **Aldura** | [Whatsapp](https://wa.me/+6281333093230)   |
 | 📱 **Hasbi** | [Whatsapp](https://wa.me/+6287868287838)  |
+
+---
+
+## Catatan Penting ⚠️
+- Minimal **3 service (wajib)**
+- Orkestrasi **wajib**
+- Project **harus berbeda untuk setiap peserta**
