@@ -1,4 +1,4 @@
-# Freepass Challenge POROS 2026 🚀⚙️
+# Freepass Challenge DevOps POROS 2026 🚀⚙️
 
 ![devops_loop](https://github.com/user-attachments/assets/2941c294-37ef-411d-a945-8d8dd44efe5c)
 
